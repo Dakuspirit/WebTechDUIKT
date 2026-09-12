@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма реєстрації</title>
+    <style>
+        .required-label::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Реєстрація</h2>
+
+<form action="https://webhook.site/29020839-b492-477d-8bb2-ca6f40fc97f3" method="POST">
+
+    <div>
+        <label for="firstName" class="required-label">Ім'я:</label><br>
+        <input type="text" id="firstName" name="firstName" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="lastName" class="required-label">Прізвище:</label><br>
+        <input type="text" id="lastName" name="lastName" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="email" class="required-label">Електронна пошта:</label><br>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="password" class="required-label">Пароль:</label><br>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="confirmPassword" class="required-label">Підтвердження паролю:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="secretQuestion" class="required-label">Секретне питання для відновлення паролю:</label><br>
+        <select id="secretQuestion" name="secretQuestion" required>
+            <option value="">Оберіть питання</option>
+            <option value="pet_name">Кличка вашого першого домашнього улюбленця?</option>
+            <option value="mother_maiden_name">Дівоче прізвище вашої матері?</option>
+            <option value="childhood_city">Місто, де ви народилися?</option>
+        </select>
+    </div>
+    <br>
+
+    <div>
+        <label for="secretAnswer" class="required-label">Відповідь на секретне питання:</label><br>
+        <input type="text" id="secretAnswer" name="secretAnswer" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="birthDate">Дата народження:</label><br>
+        <input type="date" id="birthDate" name="birthDate">
+    </div>
+    <br>
+
+    <div>
+        <label for="gender">Стать:</label><br>
+        <select id="gender" name="gender">
+            <option value="">Оберіть стать</option>
+            <option value="male">Чоловіча</option>
+            <option value="female">Жіноча</option>
+        </select>
+    </div>
+    <br>
+
+    <div>
+        <input type="submit" value="Відправити дані">
+    </div>
+
+</form>
+
+</body>
+</html>
