@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #0f0f0f;
+    border-bottom: 1px solid #333;
+}
+
+.channel-banner {
+    height: 200px;
+    background-color: #333;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    gap: 25px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 30px;
+    padding: 0 50px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 25px;
+}
+
+.tabs span {
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.tabs .active {
+    border-bottom: 3px solid white;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.video-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+.thumbnail {
+    height: 180px;
+    background-color: #444;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.video-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.video-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+}
