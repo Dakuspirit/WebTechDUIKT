@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Lab4.css">
+</head>
+<body>
+
+<div class="planner-wrapper">
+    <header class="planner-header">
+        <h1 class="main-title">WEEKLY PLAN</h1>
+
+        <div class="header-field">
+            <label for="week-of">WEEK OF</label>
+            <input type="text" id="week-of">
+        </div>
+
+        <div class="header-field habit-field">
+            <label for="healthy-habit">HEALTHY HABIT</label>
+            <input type="text" id="healthy-habit">
+        </div>
+
+        <div class="header-Evaluation">
+            <label class="eval-item">
+                <span>ROCKED IT</span>
+                <input type="checkbox" aria-label="Rocked it">
+            </label>
+            <label class="eval-item">
+                <span>ROOM FOR IMPROVEMENT</span>
+                <input type="checkbox" aria-label="Room for improvement">
+            </label>
+        </div>
+    </header>
+
+    <main class="planner-grid">
+        <aside class="sidebar">
+            <div class="to-do-header">TO DO</div>
+
+            <div class="todo-section">
+                <h2>TOP 3 GOALS</h2>
+                <div class="task-row"><input type="checkbox" aria-label="Goal 1 status"><input type="text" aria-label="Goal 1"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Goal 2 status"><input type="text" aria-label="Goal 2"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Goal 3 status"><input type="text" aria-label="Goal 3"></div>
+            </div>
+
+            <div class="todo-section">
+                <h2>EVERYTHING ELSE</h2>
+                <div class="task-row"><input type="checkbox" aria-label="Task 1 status"><input type="text" aria-label="Task 1"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 2 status"><input type="text" aria-label="Task 2"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 3 status"><input type="text" aria-label="Task 3"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 4 status"><input type="text" aria-label="Task 4"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 5 status"><input type="text" aria-label="Task 5"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 6 status"><input type="text" aria-label="Task 6"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 7 status"><input type="text" aria-label="Task 7"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 8 status"><input type="text" aria-label="Task 8"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 9 status"><input type="text" aria-label="Task 9"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 10 status"><input type="text" aria-label="Task 10"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 11 status"><input type="text" aria-label="Task 11"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Task 12 status"><input type="text" aria-label="Task 12"></div>
+            </div>
+
+            <div class="todo-section">
+                <h2>NEXT WEEK</h2>
+                <div class="task-row"><input type="checkbox" aria-label="Next week task 1 status"><input type="text" aria-label="Next week task 1"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Next week task 2 status"><input type="text" aria-label="Next week task 2"></div>
+                <div class="task-row"><input type="checkbox" aria-label="Next week task 3 status"><input type="text" aria-label="Next week task 3"></div>
+            </div>
+        </aside>
+
+        <section class="day-cell monday corner-tl">
+            <div class="day-header">
+                <span class="day-title">MONDAY</span>
+                <input type="checkbox" aria-label="Monday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Monday notes"></textarea>
+        </section>
+
+        <section class="day-cell tuesday corner-tl">
+            <div class="day-header">
+                <span class="day-title">TUESDAY</span>
+                <input type="checkbox" aria-label="Tuesday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Tuesday notes"></textarea>
+        </section>
+
+        <section class="day-cell wednesday corner-tl">
+            <div class="day-header">
+                <span class="day-title">WEDNESDAY</span>
+                <input type="checkbox" aria-label="Wednesday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Wednesday notes"></textarea>
+        </section>
+
+        <section class="day-cell thursday corner-tl">
+            <div class="day-header">
+                <span class="day-title">THURSDAY</span>
+                <input type="checkbox" aria-label="Thursday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Thursday notes"></textarea>
+        </section>
+
+        <section class="day-cell friday corner-tl">
+            <div class="day-header">
+                <span class="day-title">FRIDAY</span>
+                <input type="checkbox" aria-label="Friday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Friday notes"></textarea>
+        </section>
+
+        <section class="day-cell saturday corner-tl">
+            <div class="day-header">
+                <span class="day-title">SATURDAY</span>
+                <input type="checkbox" aria-label="Saturday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Saturday notes"></textarea>
+        </section>
+
+        <section class="day-cell sunday">
+            <div class="day-header">
+                <span class="day-title">SUNDAY</span>
+                <input type="checkbox" aria-label="Sunday completed">
+            </div>
+            <textarea class="day-notes" aria-label="Sunday notes"></textarea>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
