@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Pr4.css">
+</head>
+<body>
+
+<div class="keyboard-wrapper">
+    <svg class="cable" viewBox="0 0 220 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 55 C 88 12, 120 8, 150 25 C 175 38, 198 28, 212 10" stroke="#8e8e8e" stroke-width="9" stroke-linecap="round"/>
+    </svg>
+
+    <div class="keyboard">
+        <div class="keyboard-grid">
+
+            <div class="top-strip">
+                <div class="f-row">
+                    <div class="well single-well">
+                        <button class="key center"><span class="sub">Esc</span></button>
+                    </div>
+
+                    <div class="well f-group">
+                        <button class="key center">F1</button>
+                        <button class="key center">F2</button>
+                        <button class="key center">F3</button>
+                        <button class="key center">F4</button>
+                    </div>
+
+                    <div class="well f-group">
+                        <button class="key center">F5</button>
+                        <button class="key center">F6</button>
+                        <button class="key center">F7</button>
+                        <button class="key center">F8</button>
+                    </div>
+
+                    <div class="well f-group">
+                        <button class="key center">F9</button>
+                        <button class="key center">F10</button>
+                        <button class="key center">F11</button>
+                        <button class="key center">F12</button>
+                    </div>
+                </div>
+
+                <div class="well nav-top">
+                    <button class="key">
+                        <span>PrtSc</span>
+                        <span class="divider"></span>
+                        <span>SysRq</span>
+                    </button>
+                    <button class="key">
+                        <span>Scroll</span>
+                        <span>Lock</span>
+                    </button>
+                    <button class="key">
+                        <span>Pause</span>
+                        <span class="divider"></span>
+                        <span>Break</span>
+                    </button>
+                </div>
+
+                <div class="leds">
+                    <div class="led-item">
+                        <span>1</span>
+                        <div class="led-bulb on"></div>
+                    </div>
+                    <div class="led-item">
+                        <span>A</span>
+                        <div class="led-bulb"></div>
+                    </div>
+                    <div class="led-item">
+                        <span>&#8615;</span>
+                        <div class="led-bulb"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well main-block">
+                <button class="key k-4">
+                    <span class="key-row"><span>~</span></span>
+                    <span class="key-row"><span>`</span><span class="ua">'</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>!</span></span>
+                    <span class="key-row"><span>1</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>@</span><span class="ua">"</span></span>
+                    <span class="key-row"><span>2</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>#</span><span class="ua">№</span></span>
+                    <span class="key-row"><span>3</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>$</span><span class="ua">;</span></span>
+                    <span class="key-row"><span>4</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>%</span></span>
+                    <span class="key-row"><span>5</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>^</span><span class="ua">:</span></span>
+                    <span class="key-row"><span>6</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>&amp;</span><span class="ua">?</span></span>
+                    <span class="key-row"><span>7</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>*</span></span>
+                    <span class="key-row"><span>8</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>(</span></span>
+                    <span class="key-row"><span>9</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>)</span></span>
+                    <span class="key-row"><span>0</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>_</span></span>
+                    <span class="key-row"><span>-</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>+</span></span>
+                    <span class="key-row"><span>=</span></span>
+                </button>
+                <button class="key k-8 v-center"><span class="icon-lg">&#8592;</span></button>
+
+                <button class="key k-5">
+                    <span class="key-row"><span>&#8676;</span></span>
+                    <span class="key-row"><span></span><span>&#8677;</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>Q</span></span>
+                    <span class="key-row"><span></span><span class="ua">Й</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>W</span></span>
+                    <span class="key-row"><span></span><span class="ua">Ц</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>E</span></span>
+                    <span class="key-row"><span></span><span class="ua">У</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>R</span></span>
+                    <span class="key-row"><span></span><span class="ua">К</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>T</span></span>
+                    <span class="key-row"><span></span><span class="ua">Е</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>Y</span></span>
+                    <span class="key-row"><span></span><span class="ua">Н</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>U</span></span>
+                    <span class="key-row"><span></span><span class="ua">Г</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>I</span></span>
+                    <span class="key-row"><span></span><span class="ua">Ш</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>O</span></span>
+                    <span class="key-row"><span></span><span class="ua">Щ</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>P</span></span>
+                    <span class="key-row"><span></span><span class="ua">З</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>{</span></span>
+                    <span class="key-row"><span>[</span><span class="ua">Х</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>}</span></span>
+                    <span class="key-row"><span>]</span><span class="ua">Ї</span></span>
+                </button>
+                <button class="key k-enter">
+                    <span class="enter-text">&#8629; Enter</span>
+                </button>
+
+                <button class="key k-6 v-center">
+                    <span class="sub">Caps</span>
+                    <span class="sub">Lock</span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>A</span></span>
+                    <span class="key-row"><span></span><span class="ua">Ф</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>S</span></span>
+                    <span class="key-row"><span></span><span class="ua">І</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>D</span></span>
+                    <span class="key-row"><span></span><span class="ua">В</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>F</span></span>
+                    <span class="key-row"><span></span><span class="ua">А</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>G</span></span>
+                    <span class="key-row"><span></span><span class="ua">П</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>H</span></span>
+                    <span class="key-row"><span></span><span class="ua">Р</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>J</span></span>
+                    <span class="key-row"><span></span><span class="ua">О</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>K</span></span>
+                    <span class="key-row"><span></span><span class="ua">Л</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>L</span></span>
+                    <span class="key-row"><span></span><span class="ua">Д</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>:</span></span>
+                    <span class="key-row"><span>;</span><span class="ua">Ж</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>"</span></span>
+                    <span class="key-row"><span>'</span><span class="ua">Є</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>|</span></span>
+                    <span class="key-row"><span>\</span><span class="ua">Ґ</span></span>
+                </button>
+
+                <button class="key k-5 center"><span class="icon-lg">&#8679;</span></button>
+                <button class="key k-4">
+                    <span class="key-row"><span>|</span></span>
+                    <span class="key-row"><span>\</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>Z</span></span>
+                    <span class="key-row"><span></span><span class="ua">Я</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>X</span></span>
+                    <span class="key-row"><span></span><span class="ua">Ч</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>C</span></span>
+                    <span class="key-row"><span></span><span class="ua">С</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>V</span></span>
+                    <span class="key-row"><span></span><span class="ua">М</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>B</span></span>
+                    <span class="key-row"><span></span><span class="ua">И</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>N</span></span>
+                    <span class="key-row"><span></span><span class="ua">Т</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>M</span></span>
+                    <span class="key-row"><span></span><span class="ua">Ь</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>&lt;</span></span>
+                    <span class="key-row"><span>,</span><span class="ua">Б</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>&gt;</span></span>
+                    <span class="key-row"><span>.</span><span class="ua">Ю</span></span>
+                </button>
+                <button class="key k-4">
+                    <span class="key-row"><span>?</span><span class="ua">,</span></span>
+                    <span class="key-row"><span>/</span><span class="ua">.</span></span>
+                </button>
+                <button class="key k-11 v-center"><span class="icon-lg">&#8679;</span></button>
+
+                <button class="key k-6 v-center"><span class="sub">Ctrl</span></button>
+                <button class="key k-5"></button>
+                <button class="key k-5 v-center"><span class="sub">Alt</span></button>
+                <button class="key k-23"></button>
+                <button class="key k-5 v-center"><span class="sub">Alt Gr</span></button>
+                <button class="key k-5"></button>
+                <button class="key k-5 center"><span class="icon-md">&#9776;</span></button>
+                <button class="key k-6 v-center"><span class="sub">Ctrl</span></button>
+            </div>
+
+            <div class="nav-cluster">
+                <div class="well nav-six">
+                    <button class="key center"><span class="sub">Ins</span></button>
+                    <button class="key center"><span>&#8598;</span></button>
+                    <button class="key center"><span class="sub">PgUp</span></button>
+                    <button class="key center"><span class="sub">Del</span></button>
+                    <button class="key center"><span class="sub">End</span></button>
+                    <button class="key center"><span class="sub">PgDn</span></button>
+                </div>
+
+                <div class="arrows-grid">
+                    <div class="arrow-up-wrap">
+                        <button class="key center"><span class="icon-md">&#8593;</span></button>
+                    </div>
+                    <div class="arrow-bottom-row">
+                        <button class="key center"><span class="icon-md">&#8592;</span></button>
+                        <button class="key center"><span class="icon-md">&#8595;</span></button>
+                        <button class="key center"><span class="icon-md">&#8594;</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well numpad">
+                <button class="key center active-lock">
+                    <span class="sub">Num</span>
+                    <span class="sub">Lock</span>
+                </button>
+                <button class="key center">/</button>
+                <button class="key center">*</button>
+                <button class="key center">-</button>
+
+                <button class="key"><span>7</span><span class="sub">Home</span></button>
+                <button class="key"><span>8</span><span class="sub">&#8593;</span></button>
+                <button class="key"><span>9</span><span class="sub">PgUp</span></button>
+                <button class="key center span-row-2 icon-md">+</button>
+
+                <button class="key"><span>4</span><span class="sub">&#8592;</span></button>
+                <button class="key"><span>5</span></button>
+                <button class="key"><span>6</span><span class="sub">&#8594;</span></button>
+
+                <button class="key"><span>1</span><span class="sub">End</span></button>
+                <button class="key"><span>2</span><span class="sub">&#8595;</span></button>
+                <button class="key"><span>3</span><span class="sub">PgDn</span></button>
+                <button class="key center span-row-2"><span class="sub">Enter</span></button>
+
+                <button class="key span-col-2"><span>0</span><span class="sub">Ins</span></button>
+                <button class="key"><span>.</span><span class="sub">Del</span></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
