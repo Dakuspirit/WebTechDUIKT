@@ -1,0 +1,279 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: #1b1b2f;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #fff;
+}
+
+h1 {
+    font-size: clamp(18px, 3vw, 28px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.stage {
+    --s: min(92vw, 720px);
+    position: relative;
+    width: var(--s);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+
+    /* Анімація фону */
+    background: linear-gradient(180deg,
+    #4aa8ff 0%, #bfe6ff 20%, #ffd9a8 40%,
+    #ff8f7a 55%, #6a4c93 70%, #101c44 100%);
+    background-size: 100% 300%;
+    animation: sky 24s ease-in-out infinite alternate;
+}
+
+/* Пауза */
+.stage:hover,
+.stage:hover * {
+    animation-play-state: paused;
+}
+
+@keyframes sky {
+    from { background-position: 0 0; }
+    to   { background-position: 0 100%; }
+}
+
+/* Хмари */
+.clouds {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-repeat: repeat-x;
+    z-index: 0;
+}
+
+.clouds.far {
+    top: 6%;
+    height: 26%;
+    opacity: .6;
+    background-image:
+            radial-gradient(ellipse 40px 14px at 80px 30px,  #fff 60%, transparent 62%),
+            radial-gradient(ellipse 28px 11px at 110px 22px, #fff 60%, transparent 62%),
+            radial-gradient(ellipse 36px 13px at 360px 50px, #fff 60%, transparent 62%),
+            radial-gradient(ellipse 24px 10px at 390px 42px, #fff 60%, transparent 62%);
+    background-size: 500px 100%;
+    animation: clouds-far 60s linear infinite;
+}
+
+.clouds.near {
+    top: 14%;
+    height: 34%;
+    opacity: .9;
+    background-image:
+            radial-gradient(ellipse 70px 24px at 140px 60px, #fff 60%, transparent 62%),
+            radial-gradient(ellipse 48px 18px at 190px 44px, #fff 60%, transparent 62%),
+            radial-gradient(ellipse 60px 20px at 520px 90px, #fff 60%, transparent 62%),
+            radial-gradient(ellipse 40px 15px at 560px 74px, #fff 60%, transparent 62%);
+    background-size: 700px 100%;
+    animation: clouds-near 25s linear infinite;
+}
+
+@keyframes clouds-far  { to { background-position-x: -500px; } }
+@keyframes clouds-near { to { background-position-x: -700px; } }
+
+/* Земля */
+.ground {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 18%;
+    z-index: 1;
+    background:
+            linear-gradient(180deg, #7ed957 0, #7ed957 12%, transparent 12%),
+            repeating-linear-gradient(90deg, #4caf50 0 40px, #43a047 40px 80px);
+    background-size: 100% 100%, 80px 100%;
+    animation: ground-run 1.2s linear infinite;
+}
+
+@keyframes ground-run {
+    to { background-position: 0 0, -80px 0; }
+}
+
+/* Тінь */
+.shadow {
+    position: absolute;
+    left: 50%;
+    bottom: 14%;
+    width: 22%;
+    height: 4%;
+    translate: -50% 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .35);
+    z-index: 1;
+    animation: shadow-hop .3s ease-in-out infinite alternate;
+}
+
+@keyframes shadow-hop {
+    from { transform: scale(1);   opacity: .35; }
+    to   { transform: scale(.7);  opacity: .2; }
+}
+
+/* Покемон */
+.slot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16%;
+    height: 50%;
+    z-index: 2;
+}
+
+
+.mon {
+    --w: var(--sheet-w, 96);
+    --h: var(--sheet-h, 108);
+    --cols: var(--sheet-cols, 4);
+    --rows: var(--sheet-rows, 3);
+    --k: 2.4;                                   /* збільшення спрайта */
+    --cw: calc(var(--w) * var(--k) * 1px);
+    --ch: calc(var(--h) * var(--k) * 1px);
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    translate: -50% 0;
+    width: var(--cw);
+    height: var(--ch);
+    transform-origin: 50% 100%;
+
+    background: url("sprites/sheet.png") no-repeat;
+    background-size: calc(var(--cw) * var(--cols)) calc(var(--ch) * var(--rows));
+    image-rendering: pixelated;
+
+    animation:
+            walk   .6s steps(4) infinite,
+            stage  24s steps(1, end) infinite,
+            evolve 24s linear infinite;
+}
+
+@keyframes walk {
+    from { background-position-x: 0; }
+    to   { background-position-x: calc(var(--cols) * var(--cw) * -1); }
+}
+
+@keyframes stage {
+    0%    { background-position-y: 0; }
+    27.9% { background-position-y: calc(var(--ch) * -1); }
+    55.9% { background-position-y: calc(var(--ch) * -2); }
+}
+
+@keyframes evolve {
+    0%    { opacity: 0; transform: scale(.5); filter: brightness(1) invert(0); }
+    3%    { opacity: 1; transform: scale(1);  filter: brightness(1) invert(0); }
+    18%   { transform: scale(1);    filter: brightness(1) invert(0); }
+    19%   { transform: scale(1.04); filter: brightness(0) invert(1); }
+    20%   { transform: scale(1);    filter: brightness(1) invert(0); }
+    21.5% { transform: scale(1.08); filter: brightness(0) invert(1); }
+    22.5% { transform: scale(1);    filter: brightness(1) invert(0); }
+    23.5% { transform: scale(1.12); filter: brightness(0) invert(1); }
+    24.2% { transform: scale(1);    filter: brightness(1) invert(0); }
+    24.8% { transform: scale(1.16); filter: brightness(0) invert(1); }
+    25.4% { transform: scale(1.02); filter: brightness(1) invert(0); }
+    26%   { transform: scale(1.2);  filter: brightness(0) invert(1); }
+    27.8% { transform: scale(1.5);  filter: brightness(0) invert(1); }
+
+    /* Frogadier */
+    27.9% { transform: scale(1.4);  filter: brightness(0) invert(1); }
+    30%   { transform: scale(1.12); filter: brightness(1) invert(0); }
+    46%   { transform: scale(1.12); filter: brightness(1) invert(0); }
+    47%   { transform: scale(1.16); filter: brightness(0) invert(1); }
+    48%   { transform: scale(1.12); filter: brightness(1) invert(0); }
+    49.5% { transform: scale(1.2);  filter: brightness(0) invert(1); }
+    50.5% { transform: scale(1.12); filter: brightness(1) invert(0); }
+    51.5% { transform: scale(1.24); filter: brightness(0) invert(1); }
+    52.2% { transform: scale(1.12); filter: brightness(1) invert(0); }
+    52.8% { transform: scale(1.28); filter: brightness(0) invert(1); }
+    53.4% { transform: scale(1.14); filter: brightness(1) invert(0); }
+    54%   { transform: scale(1.32); filter: brightness(0) invert(1); }
+    55.8% { transform: scale(1.6);  filter: brightness(0) invert(1); }
+
+    /* Greninja */
+    55.9% { transform: scale(1.5);  filter: brightness(0) invert(1); }
+    58%   { transform: scale(1.25); filter: brightness(1) invert(0); }
+    92%   { opacity: 1; transform: scale(1.25); filter: brightness(1) invert(0); }
+    97%   { opacity: 0; transform: scale(.8);   filter: brightness(1) invert(0); }
+    100%  { opacity: 0; }
+}
+
+/* Спалахи */
+.burst {
+    position: absolute;
+    left: 50%;
+    bottom: 18%;
+    width: 44%;
+    aspect-ratio: 1;
+    translate: -50% 25%;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+    #fff 0%, rgba(190, 235, 255, .85) 35%, transparent 70%);
+    opacity: 0;
+    z-index: 3;
+    animation: burst 24s linear infinite;
+}
+
+@keyframes burst {
+    0%, 24%   { opacity: 0; transform: scale(.2); }
+    27.8%     { opacity: .9; transform: scale(1); }
+    28%       { opacity: 1;  transform: scale(1.3); }
+    31%       { opacity: 0;  transform: scale(1.9); }
+    31.1%, 52% { opacity: 0; transform: scale(.2); }
+    55.8%     { opacity: .9; transform: scale(1); }
+    56%       { opacity: 1;  transform: scale(1.3); }
+    59%       { opacity: 0;  transform: scale(1.9); }
+    100%      { opacity: 0;  transform: scale(.2); }
+}
+
+.tag {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    translate: -50% 0;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, .55);
+    font-size: clamp(11px, 1.8vw, 16px);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    opacity: 0;
+    z-index: 4;
+    animation-duration: 24s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.tag-froakie   { animation-name: tag-froakie; }
+.tag-frogadier { animation-name: tag-frogadier; }
+.tag-greninja  { animation-name: tag-greninja; }
+
+@keyframes tag-froakie {
+    0%    { opacity: 0; }
+    3%, 27.8% { opacity: 1; }
+    27.9%, 100% { opacity: 0; }
+}
+
+@keyframes tag-frogadier {
+    0%, 27.8% { opacity: 0; }
+    27.9%, 55.8% { opacity: 1; }
+    55.9%, 100% { opacity: 0; }
+}
+
+@keyframes tag-greninja {
+    0%, 55.8% { opacity: 0; }
+    55.9%, 96% { opacity: 1; }
+    97%, 100% { opacity: 0; }
+}
