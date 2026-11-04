@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <title>Особистий веб-сайт</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Особистий веб-сайт — Кудлай Микита</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Pr5.css">
 </head>
 <body>
 
-    <header>
-        <h1>Особистий веб-сайт Кудлая Микити</h1>
-    </header>
-
-    <nav>
+<header class="header">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Відкрити меню">
+    <label for="menu-toggle" class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+    </label>
+    <nav class="nav">
         <ul>
             <li><a href="#">Головна</a></li>
             <li><a href="#about">Про мене</a></li>
@@ -18,64 +24,183 @@
             <li><a href="#labs">Лабораторні заняття</a></li>
         </ul>
     </nav>
+</header>
 
-    <main>
-     
-        <section id="about">
-            <h2>Про мене</h2>
-            <img src="https://avatars.githubusercontent.com/u/236792391?s=400&u=194602f956f294d4767f16a5c933f77ae437c286&v=4" width="200" alt="Фото профілю">
-            <p><b>Ім'я:</b> Кудлай Микита</p>
-            <p><b>Біографія:</b> Студент ТЦР-22/ШІД-21 </p>
-            <p><b>Контакти:</b> st9688290@stud.duikt.edu.ua</p>
-        </section>
+<main>
+    <section id="about" class="hero">
+        <div class="container hero__inner">
+            <div class="hero__text">
+                <h1>Привіт, я Микита, студент 2 курсу університету ДУІКТ</h1>
+                <p class="hero__bio"><b>Кудлай Микита</b>, студент ТЦР-22/ШІД-21.
+                    Тут зібрані мої практичні та лабораторні роботи з курсу WEB-технології.</p>
+                <p class="hero__bio">Контакти: <a href="mailto:st9688290@stud.duikt.edu.ua">st9688290@stud.duikt.edu.ua</a></p>
+                <p class="hero__source">Шаблон було взято з:</p>
+                <div class="hero__buttons">
+                    <a class="btn btn--primary" target="_blank" rel="noopener"
+                       href="https://www.figma.com/design/gKZoWoleFgP35xvYu83Y2l/Portfolio-UI---Web---Mobile?node-id=6-52&t=ir8Rpzop0TGoLCsi-4">Figma: Web</a>
+                    <a class="btn btn--outline" target="_blank" rel="noopener"
+                       href="https://www.figma.com/design/gKZoWoleFgP35xvYu83Y2l/Portfolio-UI---Web---Mobile?node-id=136-57&t=ir8Rpzop0TGoLCsi-4">Figma: Mobile</a>
+                </div>
+            </div>
+            <div class="hero__photo">
+                <img src="https://avatars.githubusercontent.com/u/236792391?s=400&u=194602f956f294d4767f16a5c933f77ae437c286&v=4"
+                     alt="Фото профілю">
+            </div>
+        </div>
+    </section>
 
-        <section id="practical">
-            <h2>Практичні роботи</h2>
-            <ul>
-                <li>
-                    <a href="Pr1.html">Практична робота 1</a>
-                    <p> Основи HTML. Розклад занять </p>
-                </li>
-                <li>
-                    <a href="Pr3.html">Практична(лабораторна) робота 3</a>
-                    <p> Копія сторінки Ютуб </p>
-                </li>
-                <li>
-                    <a href="Pr4.html">Практична робота 4</a>
-                    <p> Повнорозмірна клавіатура </p>
-                </li>
-            </ul>
-        </section>
+    <section class="works" id="works">
+        <div class="container">
+            <div class="section-head">
+                <h2>Список робіт</h2>
+                <a href="#practical" class="view-all">Дивитись усі</a>
+            </div>
+            <div class="cards">
+                <a class="card" href="#pr1">
+                    <h3>Практична робота 1</h3>
+                    <p class="meta"><span>ПР 1</span><i></i><span>HTML</span></p>
+                    <p>Основи HTML. Розклад занять.</p>
+                </a>
+                <a class="card" href="#pr3">
+                    <h3>Практична робота 3</h3>
+                    <p class="meta"><span>ПР 3</span><i></i><span>CSS, Flexbox</span></p>
+                    <p>Копія головної сторінки YouTube.</p>
+                </a>
+                <a class="card" href="#pr4">
+                    <h3>Практична робота 4</h3>
+                    <p class="meta"><span>ПР 4</span><i></i><span>CSS, Grid</span></p>
+                    <p>Повнорозмірна клавіатура.</p>
+                </a>
+                <a class="card" href="#lab1">
+                    <h3>Лабораторна робота 1</h3>
+                    <p class="meta"><span>ЛР 1</span><i></i><span>HTML, Форми</span></p>
+                    <p>Основи HTML. Бланк реєстрації.</p>
+                </a>
+                <a class="card" href="#lab2">
+                    <h3>Лабораторна робота 2</h3>
+                    <p class="meta"><span>ЛР 2</span><i></i><span>CSS</span></p>
+                    <p>Робота зі стилями CSS.</p>
+                </a>
+                <a class="card" href="#lab4">
+                    <h3>Лабораторна робота 4</h3>
+                    <p class="meta"><span>ЛР 4</span><i></i><span>CSS, Grid</span></p>
+                    <p>Тижневий планер на CSS Grid.</p>
+                </a>
+                <a class="card" href="#lab6">
+                    <h3>Лабораторна робота 6</h3>
+                    <p class="meta"><span>ЛР 6</span><i></i><span>CSS, Анімація</span></p>
+                    <p>Анімація еволюції покемона.</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section id="labs">
-            <h2>Лабораторні заняття</h2>
-            <ul>
-                <li>
-                    <a href="lab1.html">Лабораторна робота 1</a>
-                    <p> Основи HTML. Бланк реєстрації </p>
-                </li>
-                <li>
-                    <a href="lab2.html">Лабораторна робота 2</a>
-                    <p> Робота з CSS </p>
-                </li>
-                <li>
-                    <a href="Lab4.html">Лабораторна робота 4</a>
-                    <p> Планер </p>
-                </li>
-                <li>
-                    <a href="Lab6.html">Лабораторна робота 6</a>
-                    <p> Анімація CSS </p>
-                </li>
-            </ul>
-        </section>
+    <section id="practical" class="posts">
+        <div class="container">
+            <h2 class="posts__title">Практичні роботи</h2>
 
-    </main>
+            <article class="post" id="pr1">
+                <a class="post__img" href="Pr1.html" data-label="ПР 1" aria-label="Скріншот практичної роботи 1">
+                    <img src="img/pr1.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="Pr1.html">Практична робота 1</a></h3>
+                    <p class="tag"><span class="pill">ПР 1</span><span class="cat">HTML</span></p>
+                    <p>Основи HTML: Розклад занять на місяць</p>
+                </div>
+            </article>
 
-    <footer>
-        <p>Контакти: st9688290@stud.duikt.edu.ua | Соціальні мережі: <a href="https://t.me/Fate_Walker">Telegram</a></p>
-        <p>Роки навчання: 2025-2029</p>
-        <p><a href="https://github.com/Dakuspirit/WebTechDUIKT">Мій репо на GitHub</a></p>
-    </footer>
+            <article class="post" id="pr3">
+                <a class="post__img" href="Pr3.html" data-label="ПР 3" aria-label="Скріншот практичної роботи 3">
+                    <img src="img/pr3.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="Pr3.html">Практична робота 3</a></h3>
+                    <p class="tag"><span class="pill">ПР 3</span><span class="cat">CSS, Flexbox</span></p>
+                    <p>Копія головної сторінки YouTube на Flexbox.</p>
+                </div>
+            </article>
+
+            <article class="post" id="pr4">
+                <a class="post__img" href="Pr4.html" data-label="ПР 4" aria-label="Скріншот практичної роботи 4">
+                    <img src="img/pr4.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="Pr4.html">Практична робота 4</a></h3>
+                    <p class="tag"><span class="pill">ПР 4</span><span class="cat">CSS, Grid</span></p>
+                    <p>Повнорозмірна клавіатура на CSS Grid.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="labs" class="posts posts--labs">
+        <div class="container">
+            <h2 class="posts__title">Лабораторні заняття</h2>
+
+            <article class="post" id="lab1">
+                <a class="post__img" href="lab1.html" data-label="ЛР 1" aria-label="Скріншот лабораторної роботи 1">
+                    <img src="img/lab1.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="lab1.html">Лабораторна робота 1</a></h3>
+                    <p class="tag"><span class="pill">ЛР 1</span><span class="cat">HTML, Форми</span></p>
+                    <p>Основи HTML.</p>
+                </div>
+            </article>
+
+            <article class="post" id="lab2">
+                <a class="post__img" href="lab2.html" data-label="ЛР 2" aria-label="Скріншот лабораторної роботи 2">
+                    <img src="img/lab2.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="lab2.html">Лабораторна робота 2</a></h3>
+                    <p class="tag"><span class="pill">ЛР 2</span><span class="cat">CSS</span></p>
+                    <p>Знайомство з CSS.</p>
+                </div>
+            </article>
+
+            <article class="post" id="lab4">
+                <a class="post__img" href="Lab4.html" data-label="ЛР 4" aria-label="Скріншот лабораторної роботи 4">
+                    <img src="img/lab4.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="Lab4.html">Лабораторна робота 4</a></h3>
+                    <p class="tag"><span class="pill">ЛР 4</span><span class="cat">CSS, Grid</span></p>
+                    <p>Тижневий планер, побудований на CSS Grid за макетом із зображення.</p>
+                </div>
+            </article>
+
+            <article class="post" id="lab6">
+                <a class="post__img" href="Lab6.html" data-label="ЛР 6" aria-label="Скріншот лабораторної роботи 6">
+                    <img src="img/lab6.png" alt="">
+                </a>
+                <div class="post__body">
+                    <h3><a href="Lab6.html">Лабораторна робота 6</a></h3>
+                    <p class="tag"><span class="pill">ЛР 6</span><span class="cat">CSS, Анімація</span></p>
+                    <p>Анімація еволюції за допомогою CSS властивостей.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__icons">
+        <a href="https://t.me/Fate_Walker" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
+                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+            </svg>
+        </a>
+        <a href="https://github.com/Dakuspirit/WebTechDUIKT" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 16 16" width="30" height="30" fill="currentColor" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+        </a>
+    </div>
+    <p>Copyright ©2026 Кудлай Микита. Всі права захищені</p>
+    <p>Роки навчання: 2024-2028</p>
+</footer>
 
 </body>
 </html>

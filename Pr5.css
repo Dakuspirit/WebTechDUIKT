@@ -1,0 +1,415 @@
+/* ---------- Змінні (кольори з Figma) ---------- */
+:root {
+    --dark: #21243D;
+    --primary: #FF6464;
+    --secondary: #00A8CC;
+    --light: #8695A4;
+    --bg: #EDF7FA;
+    --navy: #142850;
+    --gray: #E0E0E0;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--dark);
+    background: #FFFFFF;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
+
+.container {
+    width: 100%;
+    max-width: 904px;          /* 856px контенту + відступи */
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- Header / Nav ---------- */
+.header {
+    height: 70px;
+    position: relative;
+    background: #FFFFFF;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 60px 0 0;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav a {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    color: #000000;
+    text-decoration: none;
+}
+.nav a:hover { color: var(--primary); }
+
+.menu-toggle, .burger { display: none; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 120px 0 100px; }
+
+.hero__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero__text { max-width: 506px; }
+
+.hero h1 {
+    margin: 0 0 40px;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 60px;
+}
+
+.hero p {
+    margin: 0 0 40px;
+    max-width: 497px;
+}
+.hero p a { color: var(--secondary); text-decoration: none; }
+.hero p a:hover { text-decoration: underline; }
+
+.hero__buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 208px;
+    height: 47px;
+    border-radius: 2px;
+    border: 2px solid var(--primary);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+.btn--primary { background: var(--primary); color: #FFFFFF; }
+.btn--primary:hover { background: #e84f4f; border-color: #e84f4f; }
+.btn--outline { background: transparent; color: var(--primary); }
+.btn--outline:hover { background: var(--primary); color: #FFFFFF; }
+
+.hero__photo {
+    position: relative;
+    flex: 0 0 243px;
+    width: 243px;
+    height: 243px;
+}
+.hero__photo::before {          /* світло-блакитне коло позаду */
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translate(-5px, 13px);
+    border-radius: 50%;
+    background: var(--bg);
+}
+.hero__photo img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* ---------- Список робіт ---------- */
+.works {
+    background: var(--bg);
+    padding: 7px 0 70px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4px;
+}
+.section-head h2,
+.posts__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 60px;
+}
+.view-all {
+    color: var(--secondary);
+    text-decoration: none;
+    margin-bottom: 18px;
+}
+.view-all:hover { text-decoration: underline; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    display: block;
+    padding: 24px 23px 28px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(187, 225, 250, 0.25);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(187, 225, 250, 0.6);
+}
+.card h3 {
+    margin: 0 0 20px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 38px;
+}
+.card p { margin: 0; }
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px !important;
+    font-size: 18px;
+    line-height: 26px;
+}
+.meta i {
+    width: 0;
+    height: 21px;
+    border-left: 1px solid #000000;
+}
+
+/* ---------- Пости ---------- */
+.posts { padding-top: 24px; }
+.posts--labs { padding-bottom: 40px; }
+
+.post {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 0 30px;
+    border-bottom: 1px solid var(--gray);
+    scroll-margin-top: 20px;
+}
+
+.post__img {
+    position: relative;
+    flex: 0 0 246px;
+    width: 246px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--light);
+    font-weight: 700;
+    font-size: 26px;
+    text-decoration: none;
+}
+.post__img::before { content: attr(data-label); }   /* запасний напис, якщо скріна ще немає */
+.post__img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post__body h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 44px;
+}
+.post__body h3 a { text-decoration: none; }
+.post__body h3 a:hover { color: var(--secondary); }
+
+.tag {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 6px 0 14px;
+}
+.pill {
+    padding: 0 12px;
+    min-width: 62px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--navy);
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 25px;
+}
+.cat {
+    color: var(--light);
+    font-size: 20px;
+    line-height: 29px;
+}
+.post__body p:last-child { margin: 0; max-width: 594px; }
+
+/* ---------- Footer ---------- */
+.footer {
+    padding: 50px 24px 40px;
+    text-align: center;
+    background: #FFFFFF;
+}
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px;
+}
+.footer__icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 22px;
+}
+.footer__icons a { color: var(--dark); display: inline-flex; transition: color .2s; }
+.footer__icons a:hover { color: var(--primary); }
+
+/* ---------- Середні екрани ---------- */
+@media (max-width: 1000px) {
+    .nav ul { gap: 22px; padding-right: 24px; }
+    .nav a { font-size: 18px; }
+}
+
+/* ---------- Мобільна версія (Figma: Home - Mobile, 375px) ---------- */
+@media (max-width: 768px) {
+    .container { padding: 0 11px; }
+
+    /* Header 50px + бургер-меню */
+    .header { height: 50px; }
+
+    .burger {
+        position: absolute;
+        right: 18px;
+        top: 0;
+        width: 30px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 7.4px;
+        cursor: pointer;
+        z-index: 3;
+    }
+    .burger span {
+        display: block;
+        width: 30px;
+        border-top: 1.6px solid var(--dark);
+        transition: transform .2s, opacity .2s;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 18px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        opacity: 0;
+        z-index: 4;
+        cursor: pointer;
+    }
+    .menu-toggle:checked ~ .burger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle:checked ~ .burger span:nth-child(2) { opacity: 0; }
+    .menu-toggle:checked ~ .burger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .menu-toggle:focus-visible ~ .burger { outline: 2px solid var(--secondary); }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 0 4px 10px rgba(187, 225, 250, 0.5);
+        z-index: 2;
+    }
+    .menu-toggle:checked ~ .nav { display: block; }
+    .nav ul {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 8px 0 16px;
+    }
+    .nav li { width: 100%; text-align: center; }
+    .nav a { display: block; padding: 10px 0; }
+
+    /* Hero */
+    .hero { padding: 33px 0 54px; }
+    .hero__inner {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 34px;
+        text-align: center;
+    }
+    .hero__text { max-width: 328px; }
+    .hero h1 { font-size: 32px; line-height: 40px; margin-bottom: 30px; }
+    .hero p { margin-bottom: 30px; }
+    .hero__buttons { flex-direction: column; align-items: center; gap: 12px; }
+
+    .hero__photo { flex: 0 0 171px; width: 171px; height: 171px; }
+    .hero__photo::before { transform: translate(-3.5px, 9px); }
+
+    /* Список робіт */
+    .works { padding: 1px 0 50px; }
+    .section-head { justify-content: center; margin-bottom: 0; }
+    .section-head h2, .posts__title { font-size: 18px; text-align: center; }
+    .view-all { display: none; }
+
+    .cards { grid-template-columns: 1fr; gap: 17px; }
+    .card { padding: 12px 19px 22px; }
+    .card h3 { font-size: 22px; line-height: 30px; margin-bottom: 14px; }
+    .meta { font-size: 16px; gap: 14px; }
+
+    /* Пости */
+    .posts { padding-top: 0; }
+    .posts__title { text-align: center; }
+    .post {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 0 30px;
+        margin-bottom: 30px;
+    }
+    .post__img { flex: none; width: 100%; height: auto; aspect-ratio: 340 / 250; }
+    .post__body h3 { font-size: 24px; line-height: 30px; margin-top: 24px; }
+    .tag { margin: 10px 0 18px; }
+    .cat { font-size: 16px; line-height: 24px; }
+    .pill { font-size: 16px; }
+
+    /* Footer */
+    .footer { padding: 55px 20px 36px; }
+}
+
+/* Повага до налаштувань користувача */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+}
