@@ -1,4 +1,3 @@
-/* ---------- Змінні (кольори з Figma) ---------- */
 :root {
     --dark: #21243D;
     --primary: #FF6464;
@@ -27,12 +26,11 @@ a { color: inherit; }
 
 .container {
     width: 100%;
-    max-width: 904px;          /* 856px контенту + відступи */
+    max-width: 904px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* ---------- Header / Nav ---------- */
 .header {
     height: 70px;
     position: relative;
@@ -61,7 +59,6 @@ a { color: inherit; }
 
 .menu-toggle, .burger { display: none; }
 
-/* ---------- Hero ---------- */
 .hero { padding: 120px 0 100px; }
 
 .hero__inner {
@@ -114,7 +111,7 @@ a { color: inherit; }
     width: 243px;
     height: 243px;
 }
-.hero__photo::before {          /* світло-блакитне коло позаду */
+.hero__photo::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -131,7 +128,6 @@ a { color: inherit; }
     display: block;
 }
 
-/* ---------- Список робіт ---------- */
 .works {
     background: var(--bg);
     padding: 7px 0 70px;
@@ -198,7 +194,6 @@ a { color: inherit; }
     border-left: 1px solid #000000;
 }
 
-/* ---------- Пости ---------- */
 .posts { padding-top: 24px; }
 .posts--labs { padding-bottom: 40px; }
 
@@ -227,7 +222,7 @@ a { color: inherit; }
     font-size: 26px;
     text-decoration: none;
 }
-.post__img::before { content: attr(data-label); }   /* запасний напис, якщо скріна ще немає */
+.post__img::before { content: attr(data-label); }
 .post__img img {
     position: absolute;
     inset: 0;
@@ -272,7 +267,6 @@ a { color: inherit; }
 }
 .post__body p:last-child { margin: 0; max-width: 594px; }
 
-/* ---------- Footer ---------- */
 .footer {
     padding: 50px 24px 40px;
     text-align: center;
@@ -292,17 +286,15 @@ a { color: inherit; }
 .footer__icons a { color: var(--dark); display: inline-flex; transition: color .2s; }
 .footer__icons a:hover { color: var(--primary); }
 
-/* ---------- Середні екрани ---------- */
 @media (max-width: 1000px) {
     .nav ul { gap: 22px; padding-right: 24px; }
     .nav a { font-size: 18px; }
 }
 
-/* ---------- Мобільна версія (Figma: Home - Mobile, 375px) ---------- */
+/* Мобільна версія */
 @media (max-width: 768px) {
     .container { padding: 0 11px; }
 
-    /* Header 50px + бургер-меню */
     .header { height: 50px; }
 
     .burger {
@@ -362,7 +354,6 @@ a { color: inherit; }
     .nav li { width: 100%; text-align: center; }
     .nav a { display: block; padding: 10px 0; }
 
-    /* Hero */
     .hero { padding: 33px 0 54px; }
     .hero__inner {
         flex-direction: column-reverse;
@@ -389,7 +380,6 @@ a { color: inherit; }
     .card h3 { font-size: 22px; line-height: 30px; margin-bottom: 14px; }
     .meta { font-size: 16px; gap: 14px; }
 
-    /* Пости */
     .posts { padding-top: 0; }
     .posts__title { text-align: center; }
     .post {
@@ -404,11 +394,9 @@ a { color: inherit; }
     .cat { font-size: 16px; line-height: 24px; }
     .pill { font-size: 16px; }
 
-    /* Footer */
     .footer { padding: 55px 20px 36px; }
 }
 
-/* Повага до налаштувань користувача */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { transition: none !important; }
