@@ -1,0 +1,41 @@
+.frame {
+  &__outer {
+    @include flex-center;
+    width: 100%;
+    max-width: $frame-width;
+    aspect-ratio: 2 / 3;
+    background: $color-red-light;
+    border: 6px solid $color-red;
+    border-radius: 50%;
+  }
+
+  &__inner {
+    @include flex-center;
+    width: 78%;
+    height: 82%;
+    background: $color-paper;
+    border: 3px solid $color-red;
+    border-radius: 50%;
+  }
+
+  &__tree {
+    position: relative;
+    top: -16px;
+    font-size: 15rem;
+    transform-origin: bottom center;
+    animation: sway 3s ease-in-out infinite alternate;
+  }
+
+  &__caption {
+    margin: 24px 0 0;
+    color: $color-red;
+    font-family: $font-label;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes sway {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}

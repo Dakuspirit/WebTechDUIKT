@@ -1,0 +1,19 @@
+.stamp {
+  @include flex-center;
+  flex-direction: column;
+  width: 110px;
+  height: 110px;
+  color: $color-red;
+  font-family: $font-label;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-transform: uppercase;
+  border: 3px double $color-red;
+  border-radius: 50%;
+  transform: rotate(-8deg);
+
+  &__icon {
+    font-size: 1.8rem;
+  }
+}

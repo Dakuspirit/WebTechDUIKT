@@ -1,0 +1,6 @@
+.page {
+  @include flex-center;
+  min-height: 100vh;
+  padding: 40px 16px;
+  background: repeating-linear-gradient(90deg, $color-red 0 $stripe-line, $color-cream $stripe-line $stripe-step);
+}

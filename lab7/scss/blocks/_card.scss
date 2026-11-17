@@ -1,0 +1,31 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: $card-width;
+  padding: 40px;
+  background: $color-paper;
+  border-radius: $radius;
+  box-shadow: $shadow-card;
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 32px;
+
+    &--right {
+      align-items: center;
+      border-left: 2px dotted $color-ink;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+
+    &__side--right {
+      border-left: 0;
+      border-top: 2px dotted $color-ink;
+    }
+  }
+}
